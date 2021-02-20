@@ -15,12 +15,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SomePipe } from './pipes/some.pipe';
+import { [SomePipe](https://github.com/mervbayrak/angular-pipe/blob/main/src/app/pipes/some.pipe.ts)  } from './pipes/some.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SomePipe  <-- Add 
+    [SomePipe](https://github.com/mervbayrak/angular-pipe/blob/main/src/app/pipes/some.pipe.ts)  <-- Add 
   ],
   imports: [
     BrowserModule,
