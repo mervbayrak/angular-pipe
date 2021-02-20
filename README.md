@@ -7,6 +7,11 @@ To generate pipe :
 ```
 ng g pipe some
 ```
+
+
+[SomePipe](https://github.com/mervbayrak/angular-pipe/blob/main/src/app/pipes/some.pipe.ts)
+
+
 Then in app.module.ts:
 
 ```
@@ -15,12 +20,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { [SomePipe](https://github.com/mervbayrak/angular-pipe/blob/main/src/app/pipes/some.pipe.ts)  } from './pipes/some.pipe';
+import { SomePipe } from './pipes/some.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    [SomePipe](https://github.com/mervbayrak/angular-pipe/blob/main/src/app/pipes/some.pipe.ts)  <-- Add 
+    SomePipe  <-- Add 
   ],
   imports: [
     BrowserModule,
