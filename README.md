@@ -1,27 +1,73 @@
-# AngularPipes
+# AngularPipe
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 
-## Development server
+To generate pipe :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+ng g pipe some
+```
+Then in app.module.ts:
 
-## Code scaffolding
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SomePipe } from './pipes/some.pipe';
 
-## Build
+@NgModule({
+  declarations: [
+    AppComponent,
+    SomePipe  <-- Add 
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
 
-## Running unit tests
+###  Example 1
+Then use it in HTML as:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+<div>{{ [1, 2, 3, 4] | some: predicate }} </div>
+```
+Then use it in Typescript as:
 
-## Running end-to-end tests
+```
+ predicate = function(item : number) {
+    return item > 2;
+  };
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+###  Example 1
+Then use it in HTML as:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+<li *ngFor="let arr of array | some: predicate">
+    {{ arr.name }}  {{ arr.price }}  {{ arr.color }}
+</li>
+```
+Then use it in Typescript as:
+
+```
+ array : Product[] = 
+  [
+    new Product(1, 'Laptop', 4000, 'White'), 
+    new Product(2, 'Laptop', 5000, 'Black'), 
+    new Product(3, 'Mouse', 100, 'Black'), 
+    new Product(4, 'Keyboard', 300, 'Black'),
+    new Product(5, 'Keyboard', 250, 'Gray'),
+  ];
+  predicate = function(item : Product) {
+    return item.color == 'Black';
+  };
+```
