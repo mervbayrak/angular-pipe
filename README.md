@@ -48,7 +48,7 @@ Then use it in Typescript as:
 ```
 
 
-###  Example 1
+###  Example 2
 Then use it in HTML as:
 
 ```
@@ -71,3 +71,14 @@ Then use it in Typescript as:
     return item.color == 'Black';
   };
 ```
+### About Angular Pipe:
+<div>
+  <ul>
+    <li>When you want to modify or update existing data then use Pipe.</li>
+    <li>Angular Pipe, Enables data to be processed while a workflow is in progress.</li>
+    <li>Pipes in HTML | Used with.</li>
+    <li>Angular contains ready-made pipes. UpperCasePipe, LowerCasePipe, DatePipe, CurrencyPipe..</li>
+    <li>We can write custom pipes according to our own needs</li>
+    <li>Need to import and has be to added in <b>declarations</b> array of module</li>
+  </ul>
+</div>
