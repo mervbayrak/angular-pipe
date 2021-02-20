@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let arr of array | some: predicate">
+    {{ arr.name }}  {{ arr.price }}  {{ arr.color }}
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
